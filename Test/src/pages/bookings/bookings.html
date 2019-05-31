@@ -1,0 +1,44 @@
+<!--
+  Generated template for the BookingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+
+    <ion-title>Bookings</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="Cerrarsesion()">
+            <ion-icon name="power"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+        <ion-label floating>Buscador</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="filtroBooking" ></ion-input>
+        
+      </ion-item>
+      <div padding>
+          <button ion-button color="primary" block (click)="filtro()">Filtrar</button>
+        </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col >BookingId</ion-col>
+      <ion-col >Cliente</ion-col>
+      <ion-col >Fecha de Creación</ion-col>
+      <ion-col >Dirección</ion-col>
+      <ion-col >Precio</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let booking of Bookings ">
+    <ion-col>{{ booking.bookingId }}</ion-col>
+          <ion-col>{{booking.Cliente}}</ion-col>
+          <ion-col>{{booking.Fecha_de_Creacion}}</ion-col>
+          <ion-col>{{booking.Direccion}}</ion-col>
+          <ion-col>{{booking.Precio}}</ion-col>
+        </ion-row>
+  </ion-grid>
+</ion-content>
